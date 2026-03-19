@@ -17,14 +17,14 @@ services:
       - key: NEO4J_server_memory_heap_max__size
         value: 512M
       - key: NEO4J_server_directories_data
-        value: /var/lib/neo4j/data
+        value: /data
       - key: NEO4J_server_directories_logs
-        value: /var/lib/neo4j/logs
+        value: /data/logs
       - key: NEO4J_server_directories_import
-        value: /var/lib/neo4j/import
+        value: /data/import
       - key: NEO4J_server_directories_plugins
-        value: /var/lib/neo4j/plugins
+        value: /data/plugins
     disk:
       name: neo4j-data
-      mountPath: /var/lib/neo4j
+      mountPath: /data
       sizeGB: 10

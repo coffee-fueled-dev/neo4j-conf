@@ -28,7 +28,11 @@ download_file() {
 }
 
 echo "Running as: $(whoami)"
-mkdir -p "$plugin_dir"
+mkdir -p \
+    "${NEO4J_server_directories_data:-/data}" \
+    "${NEO4J_server_directories_logs:-/logs}" \
+    "${NEO4J_server_directories_import:-/var/lib/neo4j/import}" \
+    "$plugin_dir"
 
 case "$opengds_enabled" in
     true|TRUE|1|yes|YES)
