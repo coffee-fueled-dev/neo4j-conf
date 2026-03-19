@@ -1,0 +1,30 @@
+services:
+  - type: pserv
+    runtime: docker
+    name: neo4j-dozerdb
+    plan: starter
+    envVars:
+      - key: NEO4J_AUTH
+        sync: false
+      - key: ENABLE_OPENGDS
+        value: "true"
+      - key: OPENGDS_VERSION
+        value: 2.12.0
+      - key: NEO4J_server_memory_pagecache_size
+        value: 512M
+      - key: NEO4J_server_memory_heap_initial__size
+        value: 512M
+      - key: NEO4J_server_memory_heap_max__size
+        value: 512M
+      - key: NEO4J_server_directories_data
+        value: /var/lib/neo4j/data
+      - key: NEO4J_server_directories_logs
+        value: /var/lib/neo4j/logs
+      - key: NEO4J_server_directories_import
+        value: /var/lib/neo4j/import
+      - key: NEO4J_server_directories_plugins
+        value: /var/lib/neo4j/plugins
+    disk:
+      name: neo4j-data
+      mountPath: /var/lib/neo4j
+      sizeGB: 10

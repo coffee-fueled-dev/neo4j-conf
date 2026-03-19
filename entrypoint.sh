@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-plugin_dir="/plugins"
+plugin_dir="${NEO4J_server_directories_plugins:-/plugins}"
 opengds_enabled="${ENABLE_OPENGDS:-true}"
 opengds_version="${OPENGDS_VERSION:-2.12.0}"
 opengds_jar="${plugin_dir}/opengds-${opengds_version}.jar"
